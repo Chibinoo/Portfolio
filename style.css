@@ -44,6 +44,7 @@ li {
     width: 200px;
     height: 100px;
     position: relative;
+    margin-top: 10px;
 }
   /*1. Pic*/
   img {
@@ -51,6 +52,7 @@ li {
     height: 200px;
     border-style: solid;
     border-color: black;
+    margin-top: 10px;
     /*
     align-content: space-evenly;
     border-color: black;
