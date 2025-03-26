@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+.mySlides1, .mySlides2 {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 30vw;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a grey background color */
+.prev:hover, .next:hover {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+</style>
+</head>
+<body>
+
+<h2 style="text-align:center">Multiple Slideshows</h2>
+
+
+<div class="slideshow-container">
+    <p>Slideshow 1:</p>
+  <div class="mySlides1">
+    <img src="https://i.pinimg.com/474x/08/b0/f0/08b0f0056d68c6c51a497485edd16c22.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides1">
+    <img src="https://i.pinimg.com/474x/9c/29/13/9c2913c22dc0c0382ec683e79e425de8.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides1">
+    <img src="https://i.pinimg.com/474x/66/4b/e7/664be7e1e668e2ef7dcd4fd94cab1ce3.jpg" style="width:100%">
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+</div>
+
+<p>Slideshow 2:</p>
+<div class="slideshow-container">
+  <div class="mySlides2">
+    <img src="https://i.pinimg.com/236x/28/23/5b/28235b7c405cc67a1c25a8f3e6842271.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides2">
+    <img src="https://i.pinimg.com/236x/43/6a/89/436a8908255507f384873c448a08135c.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides2">
+    <img src="https://i.pinimg.com/236x/58/e2/22/58e222e31a0f62d95e4c2f50fe60e470.jpg" style="width:100%">
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+</div>
+
+<script>
+let slideIndex = [1,1];
+let slideId = ["mySlides1", "mySlides2"]
+showSlides(1, 0);
+showSlides(1, 1);
+
+function plusSlides(n, no) {
+  showSlides(slideIndex[no] += n, no);
+}
+
+function showSlides(n, no) {
+  let i;
+  let x = document.getElementsByClassName(slideId[no]);
+  if (n > x.length) {slideIndex[no] = 1}    
+  if (n < 1) {slideIndex[no] = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex[no]-1].style.display = "block";  
+}
+</script>
+
+</body>
+</html> 
